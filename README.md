@@ -16,9 +16,9 @@ unzip KSFinder_KG_data <br>
 # Load KG data & assess the model
 python kge/src/main.py <br>
 
-# To train knowledge graph embedding models from scratch, pass the argument --t_kge=True to the above script (KGE embedding from scratch may take weeks to complete depending on the GPU capability. Optionally use the trained KGE models)
+To train knowledge graph embedding models from scratch, pass the argument --t_kge=True to the above script (KGE embedding from scratch may take weeks to complete depending on the GPU capability. Optionally use the trained KGE models)
 
-# The results of evaluation and test data will be loaded in the appropriate assessment folders.
+The results of evaluation and test data will be loaded in the appropriate assessment folders.
 
 # Train the MLP classifier and assess KSFinder
 python clf/src/main.py <br>
