@@ -8,10 +8,8 @@ conda install --file requirements.txt <br>
 pip install ampligraph <br>
 pip install ordered_set <br>
 
-# Download the data
-cd preprocess/data <br>
-wget https://zenodo.org/record/7856947/files/KSFinder_KG_data.zip?download=1 <br>
-unzip KSFinder_KG_data <br>
+# Initialize & download the data from Zenodo
+sh init.sh <br>
 
 # Load KG data & assess the model (Assessment 1 & 2)
 python kge/src/main.py <br>
