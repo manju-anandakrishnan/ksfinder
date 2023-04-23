@@ -12,6 +12,7 @@ pip install ordered_set <br>
 sh init.sh <br>
 
 # Load KG data & assess the model (Assessment 1 & 2)
+python preprocess/src/main.py <br>
 python kge/src/main.py <br>
 
 To train knowledge graph embedding models from scratch, pass the argument --t_kge=True to the above script (KGE embedding from scratch may take weeks to complete depending on the GPU capability. Optionally use the trained KGE models)
