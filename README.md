@@ -10,7 +10,7 @@ pip install ordered_set <br>
 
 # Download the data
 cd preprocess/data <br>
-wget https://zenodo.org/record/7806916/files/KSFinder_KG_data.zip?download=1 <br>
+wget https://zenodo.org/record/7856947/files/KSFinder_KG_data.zip?download=1 <br>
 unzip KSFinder_KG_data <br>
 
 # Load KG data & assess the model (Assessment 1 & 2)
