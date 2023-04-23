@@ -28,11 +28,6 @@ class PerformanceDataSets:
         y_labels, y_probs = assess6.y_labels, assess6.y_probs
         roc_score6, fpr6, tpr6, _ = Score.get_roc_scores(y_labels, y_probs)
 
-        # plt.plot(fpr3, tpr3, color='C1', alpha=1.0, label='KSFinder dataset (AUC = %0.3f)' % roc_score3)
-        # plt.plot(fpr6, tpr6, color='C1', alpha=0.8, label='PredKinKG dataset (AUC = %0.3f)' % roc_score6)
-        # plt.plot(fpr4, tpr4, color='C1', alpha=0.6, label='PKU dataset (AUC = %0.3f)' % roc_score4)
-        # plt.plot(fpr5, tpr5, color='C1', alpha=0.4, label='LinkPhinder dataset (AUC = %0.3f)' % roc_score5)
-
         plt.plot(fpr3, tpr3, color='red', label='KSFinder dataset (AUC = %0.3f)' % roc_score3)
         plt.plot(fpr6, tpr6, color='orange', label='PredKinKG dataset (AUC = %0.3f)' % roc_score6)
         plt.plot(fpr4, tpr4, label='PKU dataset (AUC = %0.3f)' % roc_score4)
@@ -45,7 +40,7 @@ class PerformanceDataSets:
         plt.ylabel('True positive rate')
         plt.legend(loc="lower right")
 
-        plt.savefig('comparative_dataset_roc.png')
+        plt.savefig(g_constants.MISC_OUTPUT+'comparative_dataset_roc.png')
 
     def plot_pr_curve():
 
@@ -81,10 +76,10 @@ class PerformanceDataSets:
         plt.ylabel('precision')
         plt.legend(loc="center left")
 
-        plt.savefig('comparative_dataset_pr.png')
+        plt.savefig(g_constants.MISC_OUTPUT+'comparative_dataset_pr.png')
 
 
-#PerformanceDataSets.plot_roc_curve()
+PerformanceDataSets.plot_roc_curve()
 PerformanceDataSets.plot_pr_curve()
 
 class CompareModels:
@@ -117,7 +112,7 @@ class CompareModels:
         plt.ylabel('True positive rate')
         plt.legend(loc="lower right")
 
-        plt.savefig('comparative_models_roc.png')
+        plt.savefig(g_constants.MISC_OUTPUT+'comparative_models_roc.png')
 
     def plot_pr_curve():
 
@@ -147,7 +142,7 @@ class CompareModels:
         plt.ylabel('precision')
         plt.legend(loc="center left")
 
-        plt.savefig('comparative_models_pr.png')
+        plt.savefig(g_constants.MISC_OUTPUT+'comparative_models_pr.png')
 
 CompareModels.plot_roc_curve()
 CompareModels.plot_pr_curve()
