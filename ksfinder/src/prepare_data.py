@@ -9,6 +9,7 @@ KG_PHOSPHORYLATION_PATH = os.path.join(ROOT_DIR_RELATIVE_PATH,kge_constants.DATA
 KSFINDER_DATA_PATH = os.path.join(ROOT_DIR_RELATIVE_PATH,ksf_constants.DATA_DIR)
 KG_PROTEINS = os.path.join(KSFINDER_DATA_PATH,ksf_constants.TXT_KG_PROTEINS)
 IDG_KINASES = os.path.join(KSFINDER_DATA_PATH,ksf_constants.TXT_IDG_KINASES)
+KG_KINASES = os.path.join(KSFINDER_DATA_PATH,ksf_constants.TXT_KG_KINASES)
 KG_IDG_KINASES = os.path.join(KSFINDER_DATA_PATH,ksf_constants.TXT_KG_IDG_KINASES)
 IDG_K_S = os.path.join(KSFINDER_DATA_PATH,ksf_constants.TXT_IDG_K_PREDICTIONS)
 
@@ -35,3 +36,18 @@ class IDGDataLoader:
             for kinase in self.idg_kg_kinases:
                 op_f.write(kinase+'\n')
         return self.idg_kg_kinases
+
+
+class KGKinasesDataLoader:
+
+    def __init__(self):
+        self.kg_kinases = list()
+    
+    def get_kg_kinases(self):
+        with open(KG_KINASES) as ip_f:
+            ip_f.readline()
+            for line in ip_f:
+               self.kg_kinases.append(line.strip())
+        return self.kg_kinases
+    
+

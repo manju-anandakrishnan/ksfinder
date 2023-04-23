@@ -30,6 +30,8 @@ class GlobalConstants:
     KINASE_SUBSTRATE_PROB = 'kinase,substrate,prob'
     KINASE = 'kinase'
     KSFINDER = 'KSFinder'
+    DIR_MISCELLANEOUS = 'miscellaneous/'
+    MISC_OUTPUT = DIR_MISCELLANEOUS+'output/'
     
 
 class KGEConstants:
