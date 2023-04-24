@@ -2,8 +2,8 @@ git clone https://github.com/manju-anandakrishnan/ksfinder.git <br>
 cd ksfinder <br>
 
 # Create environment and load libraries
-conda create --name <env name> python=3.7 <br>
-conda activate <env name> <br>
+conda create --name ksf_env python=3.7 <br>
+conda activate ksf_env <br>
 conda install --file requirements.txt <br>
 pip install ampligraph <br>
 pip install ordered_set <br>
