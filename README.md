@@ -35,7 +35,3 @@ python textmine/src/main.py <br>
 
 # Enrichment Analysis using the predicted substrates
 python enrich_analysis/src/main.py <br>
-
-
-
-
