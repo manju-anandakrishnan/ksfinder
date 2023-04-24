@@ -3,8 +3,6 @@
 # This initialization script downloads the data and models for KSFinder
 # Setting the PYTHONPATH and home directory of KSFinder
 KSFINDER_HOME_DIR=$(pwd)
-#PYTHONPATH=$KSFINDER_HOME_DIR
-echo "export PYTHONPATH=$KSFINDER_HOME_DIR" > init.sh
 
 # Download the raw KG data
 cd $KSFINDER_HOME_DIR/preprocess/data

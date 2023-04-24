@@ -12,6 +12,7 @@ Hardware Requirements -  Nvidia GPU with atleast 16 GB memory and support for CU
 
 # Initialize & download the data from Zenodo
 bash init.sh <br>
+export PYTHONPATH=$(pwd)
 
 # Load KG data & assess the model (Assessment 1 & 2)
 python preprocess/src/main.py <br>

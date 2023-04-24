@@ -44,6 +44,7 @@ class GlobalConstants:
 This class maintains the constants used by knowledge graph embedding module
 '''
 class KGEConstants:
+    DATA_DIR = 'kge/data/'
     KG_PHOSPHORYLATION = 'kg1.csv'
     KG_OTHER_REL = 'kg2.csv'
     PREDKINKG_NEGATIVES = 'predkinkg_negatives.csv'
