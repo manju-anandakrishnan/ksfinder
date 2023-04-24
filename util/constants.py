@@ -114,3 +114,11 @@ class ComparativeAssessmentConstants:
     LINKPHINDER_BENCHMARK_9010 = 'benchmark9010'
     LINKPHINDER_TRAIN_FILE = 'train.tsv'
     LINKPHINDER_TEST_FILE = 'test.tsv'
+
+class PreprocessConstants:
+    DATA_DIR = 'preprocess/data/'
+    CSV_BIOKG = 'BioKG.csv'
+    CSV_GO = 'Gene_Ontology.csv'
+    CSV_PRO = 'Protein_Ontology.csv'
+    CSV_iPTMNET = 'iPTMnet.csv'
+    CSV_iPTMNET_TEST = 'iPTMnet_test.csv'
