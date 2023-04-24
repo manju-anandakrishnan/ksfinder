@@ -4,7 +4,7 @@ from util.constants import KGEConstants as kge_constants
 import pandas as pd
 import os
 
-ROOT_DIR_RELATIVE_PATH = '../../'
+ROOT_DIR_RELATIVE_PATH = ''
 DATA_PATH = os.path.join(ROOT_DIR_RELATIVE_PATH,pp_constants.DATA_DIR)
 KGE_DATA_PATH = os.path.join(ROOT_DIR_RELATIVE_PATH,kge_constants.DATA_DIR)
 
