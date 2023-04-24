@@ -11,7 +11,7 @@ pip install ordered_set <br>
 Hardware Requirements -  Nvidia GPU with atleast 16 GB memory and support for CUDA 10.0 or higher.
 
 # Initialize & download the data from Zenodo
-sh init.sh <br>
+bash init.sh <br>
 
 # Load KG data & assess the model (Assessment 1 & 2)
 python preprocess/src/main.py <br>
