@@ -1,3 +1,7 @@
+'''
+This is an utility module maintaining classes for plotting curves and computing performance metrics
+'''
+
 from sklearn.metrics import average_precision_score,roc_auc_score, roc_curve, precision_recall_curve
 import matplotlib.pyplot as plt
 

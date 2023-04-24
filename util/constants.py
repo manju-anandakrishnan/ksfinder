@@ -1,3 +1,10 @@
+'''
+The classes in this file maintains all the constants
+'''
+
+'''
+This class maintains the generic constants used across the project
+'''
 class GlobalConstants:
     DATA_PATH = '../data/'
     OUTPUT_PATH = '../output/'
@@ -33,7 +40,9 @@ class GlobalConstants:
     DIR_MISCELLANEOUS = 'miscellaneous/'
     MISC_OUTPUT = DIR_MISCELLANEOUS+'output/'
     
-
+'''
+This class maintains the constants used by knowledge graph embedding module
+'''
 class KGEConstants:
     KG_PHOSPHORYLATION = 'kg1.csv'
     KG_OTHER_REL = 'kg2.csv'
@@ -46,10 +55,16 @@ class KGEConstants:
     MODEL_PATH = 'kge/output/'
     DATA_PATH = 'kge/data/'
 
+'''
+This class maintains the constants used by the classifier module
+'''
 class ClfConstants:
     DATA_DIR = 'clf/data/'
     MODEL_PATH = 'clf/output/'
 
+'''
+This class maintains the constants used by KSFinder, includes predictions
+'''
 class KSFinderConstants:
     DATA_DIR = 'ksfinder/data/'
     RESULTS_DIR = 'ksfinder/results/'
@@ -58,6 +73,9 @@ class KSFinderConstants:
     TXT_IDG_K_PREDICTIONS = 'idg_kinase_predictions.csv'
     TXT_KG_PROTEINS = 'kg_proteins.txt'
 
+'''
+This class maintains the constants used by the EnrichmentAnalysis module
+'''
 class EnrichmentAnalysisConstants:
     RESULTS_DIR = 'enrich_analysis/results/'
     PROTEIN_ID_TYPE = 'UNIPROT_ACCESSION'
@@ -71,6 +89,9 @@ class EnrichmentAnalysisConstants:
     RESULT_HEADER = 'Category\tFoldEnrichment \t Corrected p-value (Benjamini) \t Raw p-value \t Term\n'
     CATEGORIES = ('GOTERM_BP_DIRECT','GOTERM_CC_DIRECT','GOTERM_MF_DIRECT')
 
+'''
+This class maintains the constants used by the TextMine component
+'''
 class TextMineConstants:
     DATA_DIR = 'textmine/data/'
     UNIPROT_GENE_FILE = 'uniprot_gene_name.txt'
@@ -82,6 +103,9 @@ class TextMineConstants:
     PMC = 'pmc/'
     MEDLINE = 'medline/'
 
+'''
+This class maintains the constants used for comparative assessments
+'''
 class ComparativeAssessmentConstants:
     DATA_DIR = 'compare/data/'
     LINKPHINDER_PREDICTIONS = 'linkphinder_predictions.csv'

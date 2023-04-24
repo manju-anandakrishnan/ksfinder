@@ -3,3 +3,6 @@ numpy
 ampligraph 1.4.0
 cudatoolkit 10.0.130
 cudnn 
+scikit-learn 1.0.2
+matplotlib 3.5.3
+requests 2.28.1

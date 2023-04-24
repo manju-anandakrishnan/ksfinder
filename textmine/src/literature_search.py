@@ -15,6 +15,9 @@ EVIDENCE_FILE = os.path.join(ROOT_DIR_RELATIVE_PATH,tm_constants.RESULTS_DIR, tm
 ERR_FILE = os.path.join(ROOT_DIR_RELATIVE_PATH,tm_constants.RESULTS_DIR, tm_constants.ERR_FILE)
 KG_PHOSPHORYLATION = os.path.join(ROOT_DIR_RELATIVE_PATH,kge_constants.DATA_PATH,kge_constants.KG_PHOSPHORYLATION)
 
+'''
+This is a custom exception class for handling the exception from the iTextMine API
+'''
 class APIResponseError(Exception):
 
     def __init__(self,response_code,source,query):
@@ -23,6 +26,9 @@ class APIResponseError(Exception):
     def get_message(self):
         return self.message
 
+'''
+This class calls the iTextMine API with the input query and parses the response.
+'''
 class TextMine:
 
     PMC_URL = tm_constants.ITEXTMINE_API_URL+tm_constants.RLIMS+tm_constants.PMC
@@ -30,7 +36,8 @@ class TextMine:
 
     def __init__(self):
         pass
-
+    
+    # Parses the response from iTextMine API
     def _parse_response(self,response,kinase_names,substrate_names):
         #if response.status_code != 200: return None
         result = json.loads(response.text)  
@@ -53,6 +60,7 @@ class TextMine:
                     if substrate in s_text:
                         return (kinase,substrate)
 
+    # Hits iTextMine with the input query. Requires kinase and substrate names as well to parse the response
     def perform_search(self,query, kinase_nm, substrate_nm):
         kinase_names = kinase_nm.split(' ')
         substrate_names = substrate_nm.split(' ')
@@ -70,7 +78,10 @@ class TextMine:
             except:
                 raise APIResponseError(response.status_code,'MEDLINE',query)
         return result
-        
+
+'''
+This class filters the predictions from the IDG_prediction file by the input probability values, constructs query and invokes TextMine with the input query
+'''   
 class Predictions:
 
     PREDICTION_FILE_PATH = os.path.join(KSFINDER_RESULT_PATH,ksf_constants.TXT_IDG_K_PREDICTIONS)
@@ -97,7 +108,6 @@ class Predictions:
         return query
 
     def search_literature(self):
-        #op_f_err = open(ERR_FILE+'_'+str(self.l_prob)+'_'+str(self.h_prob),'w')
         op_f_success = open(EVIDENCE_FILE+'_'+str(self.l_prob)+'_'+str(self.h_prob),'w')
         text_mine = TextMine()
         record_cnt = self.pred_data.shape[0]
