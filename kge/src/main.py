@@ -30,7 +30,9 @@ if __name__ == '__main__':
 
     if args.t_kge:
         print('Beginning the training of the knowledge graph embedding models. This may take weeks depending on the GPU capability. Optionally use may use the trained embedding models.')
-        KGEProcessor.train_kge()
+        is_train = input("Are you sure you want to train the models from scratch? Hit 'Y' to continue, else press any other key")
+        if 'Y':
+            KGEProcessor.train_kge()
     
     evaluation_data = EvaluationData()
     evaluation_data.run()
