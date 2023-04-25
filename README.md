@@ -42,3 +42,5 @@ python textmine/src/main.py <br>
 
 # Enrichment Analysis using the predicted substrates
 python enrich_analysis/src/main.py <br>
+
+By using the data or code in this repository, you accept the terms and conditions governed by the license.
