@@ -1,7 +1,7 @@
 # This file contains the package for creating the conda environment
 pandas==1.3.5
 numpy==1.21.5
-tensorflow-gpu==1.15.5
+tensorflow-gpu==1.15
 cudatoolkit
 cudnn
 scikit-image==0.19.3

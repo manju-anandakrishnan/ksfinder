@@ -7,6 +7,7 @@ conda activate ksf_env <br>
 conda install --file requirements.txt <br>
 pip install ampligraph <br>
 pip install ordered_set <br>
+pip install suds <br>
 
 Hardware Requirements -  Nvidia GPU with at least 16 GB memory and support for CUDA 10.0 or higher.
 
