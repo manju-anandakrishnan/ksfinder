@@ -12,6 +12,9 @@ ROOT_DIR_RELATIVE_PATH = ''
 CLF_DATA_PATH = os.path.join(ROOT_DIR_RELATIVE_PATH,clf_constants.MODEL_PATH)
 KSFINDER_PATH = os.path.join(CLF_DATA_PATH,g_constants.KSFINDER+'.sav')
 
+'''
+This class loads the KSFinder model and evaluates the probabilities of the kinase-susbtrate pair
+'''
 class Evaluation:
 
     def __init__(self,test_features,test_target):
@@ -27,6 +30,9 @@ class Evaluation:
         self._evaluate()
         return self.y_labels, self.y_probs
 
+'''
+This class loads the raw test data, constructs the features by retrieving the entities vectors from the KGE model. It invokes the evaluation class, plots and writes the results.
+'''
 class Assessment:
 
     def __init__(self,data_path):

@@ -1,3 +1,6 @@
+'''
+This is the main module for preparing the data, building and assessing the classifier model.
+'''
 import argparse
 from prepare_data import ClassifierData
 from build_model import NNClassifier

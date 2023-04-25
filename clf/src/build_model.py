@@ -21,6 +21,9 @@ NEG_TRAIN = os.path.join(CLF_DATA_DIR,g_constants.CSV_NEG_TRAIN)
 CLF_OUTPUT_PATH = g_constants.OUTPUT_PATH
 KSFINDER_PATH = os.path.join(CLF_OUTPUT_PATH,g_constants.KSFINDER+'.sav')
 
+'''
+This class scales the input data, performs cross validation, builds a neural network classifier and stores the trained model.
+'''
 class NNClassifier:
 
     mlpc_params = {

@@ -25,7 +25,9 @@ ASSESS3_DATA_PATH = os.path.join(ROOT_DIR_RELATIVE_PATH,g_constants.ASSESS3_DATA
 ASSESS4_DATA_PATH = os.path.join(ROOT_DIR_RELATIVE_PATH,g_constants.ASSESS4_DATA_PATH)
 
 random.seed(10)
-
+'''
+This class generates the negative data by the combination approach. It loads data from negatome, prekinkg's negatives and randomly samples the entities by their distance in the embedding space.
+'''
 class NegativeGenerator:
 
     def __init__(self):
@@ -146,7 +148,9 @@ class NegativeGenerator:
             print(idx,sep='|',file=op_file,flush=True)
         self._write_data()
         
-
+'''
+This class loads the train and test data for classifier. It also loads the data for assessment 3 and assessment 4.
+'''
 class ClassifierData:
 
     def __init__(self):

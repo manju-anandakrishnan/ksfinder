@@ -7,6 +7,9 @@ ROOT_DIR_RELATIVE_PATH = ''
 CLF_DATA_PATH = os.path.join(ROOT_DIR_RELATIVE_PATH,clf_constants.MODEL_PATH)
 KSFINDER_PATH = os.path.join(CLF_DATA_PATH,g_constants.KSFINDER+'.sav')
 
+'''
+This class constructs data for evaluation from the prediction scores shared by other models
+'''
 class Assessment:
 
     def __init__(self,data_path):
