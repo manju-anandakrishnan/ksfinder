@@ -15,7 +15,7 @@ import random
 
 np.random.seed(0)
 ROOT_DIR_RELATIVE_PATH = ''
-KG_DATA_PATH = g_constants.DATA_PATH
+KG_DATA_PATH = kge_constants.DATA_PATH
 
 ASSESS1_DATA_PATH = os.path.join(ROOT_DIR_RELATIVE_PATH,g_constants.ASSESS1_DATA_PATH)
 ASSESS2_DATA_PATH = os.path.join(ROOT_DIR_RELATIVE_PATH,g_constants.ASSESS2_DATA_PATH)

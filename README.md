@@ -8,7 +8,7 @@ conda install --file requirements.txt <br>
 pip install ampligraph <br>
 pip install ordered_set <br>
 
-Hardware Requirements -  Nvidia GPU with atleast 16 GB memory and support for CUDA 10.0 or higher.
+Hardware Requirements -  Nvidia GPU with at least 16 GB memory and support for CUDA 10.0 or higher.
 
 # Initialize & download the data from Zenodo
 bash init.sh <br>
@@ -20,16 +20,21 @@ python kge/src/main.py <br>
 
 To train knowledge graph embedding models from scratch, pass the argument --t_kge=True to the above script (KGE embedding from scratch may take weeks to complete depending on the GPU capability. Optionally use the trained KGE models)
 
-The results of evaluation and test data will be loaded in the appropriate assessment folders.
+The results of evaluation and test data will be loaded in the assessment folders 1 & 2.
 
 # Train the MLP classifier and assess KSFinder (Assessment 3 & 4)
 python clf/src/main.py <br>
 
+To train the classifier model with the embedded vectors, pass the argument --t_clf=True to the above script.
+The results of evaluation and test data will be loaded in the assessment folders 3 & 4.
+
 # Comparative assessments (Assessment 5, 6, 7, 8)
 python compare/src/main.py <br>
+The results of evaluation and test data will be loaded in the appropriate assessment folders.
 
 # Predict using KSFinder
 python ksfinder/src/main.py <br>
+The prediction results will be loaded in the folder, ksfinder/results
 
 # Literature mining using iTextMine API
 python textmine/src/main.py <br>
