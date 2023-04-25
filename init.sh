@@ -33,7 +33,7 @@ tar -xf journal.pcbi.1007578.s009
 rm journal.pcbi.1007578.s009
 
 # Download PredKinKG predictions
-https://github.com/udel-cbcb/ikg_v2_public/releases/download/1.0.0/supplementary_file_3.csv
+wget https://github.com/udel-cbcb/ikg_v2_public/releases/download/1.0.0/supplementary_file_3.csv
 mv supplementary_file_3.csv predkinkg_predictions.csv
 
 wget https://figshare.com/ndownloader/files/22378023
