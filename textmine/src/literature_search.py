@@ -7,7 +7,7 @@ from util.constants import KSFinderConstants as ksf_constants
 from util.constants import TextMineConstants as tm_constants
 from util.constants import KGEConstants as kge_constants
 
-ROOT_DIR_RELATIVE_PATH = '../../'
+ROOT_DIR_RELATIVE_PATH = ''
 KSFINDER_RESULT_PATH = os.path.join(ROOT_DIR_RELATIVE_PATH,ksf_constants.RESULTS_DIR)
 DATA_PATH = os.path.join(ROOT_DIR_RELATIVE_PATH,tm_constants.DATA_DIR)
 UNIPROT_GENE_NAME_FILE = os.path.join(DATA_PATH,tm_constants.UNIPROT_GENE_FILE)

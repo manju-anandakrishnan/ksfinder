@@ -8,19 +8,19 @@ def process():
     linkphinder = LinkPhinderData()
     predkinkg = PredKinKGData()
     
-    # print('Loading linkphinder data---',flush=True)
-    # linkphinder.load_data()
+    print('Loading linkphinder data---',flush=True)
+    linkphinder.load_data()
 
-    # print('Assessment 5---',flush=True)
-    # assessment5 = clf_assessment(g_constants.ASSESS5_DATA_PATH)
-    # assessment5.run()
+    print('Assessment 5---',flush=True)
+    assessment5 = clf_assessment(g_constants.ASSESS5_DATA_PATH)
+    assessment5.run()
 
-    # print('Loading PredKinKG data---',flush=True)
-    # predkinkg.load_data()
+    print('Loading PredKinKG data---',flush=True)
+    predkinkg.load_data()
 
-    # print('Assessment 6---',flush=True)
-    # assessment6 = clf_assessment(g_constants.ASSESS6_DATA_PATH)
-    # assessment6.run()
+    print('Assessment 6---',flush=True)
+    assessment6 = clf_assessment(g_constants.ASSESS6_DATA_PATH)
+    assessment6.run()
     
     print('--Loading LinkPhinder prediction data---',flush=True)
     linkphinder.load_predictions()

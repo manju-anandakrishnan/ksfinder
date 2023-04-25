@@ -11,7 +11,7 @@ import numpy as np
 import pandas as pd
 import os
 
-ROOT_DIR_RELATIVE_PATH = '../../'
+ROOT_DIR_RELATIVE_PATH = ''
 KGE_MODEL_DIR = os.path.join(ROOT_DIR_RELATIVE_PATH,kge_constants.MODEL_PATH)
 
 CLF_DATA_DIR = os.path.join(ROOT_DIR_RELATIVE_PATH,clf_constants.DATA_DIR)

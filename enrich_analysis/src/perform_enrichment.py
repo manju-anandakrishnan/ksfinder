@@ -4,7 +4,7 @@ from suds.client import Client
 from util.constants import EnrichmentAnalysisConstants as ea_constants
 from util.constants import KSFinderConstants as ksf_constants
 
-ROOT_DIR_RELATIVE_PATH = '../../'
+ROOT_DIR_RELATIVE_PATH = ''
 KSFINDER_DATA_PATH = os.path.join(ROOT_DIR_RELATIVE_PATH,ksf_constants.DATA_DIR)
 KG_PROTEINS = os.path.join(KSFINDER_DATA_PATH,ksf_constants.TXT_KG_PROTEINS)
 ENRICH_RESULTS_PATH = os.path.join(ROOT_DIR_RELATIVE_PATH,ea_constants.RESULTS_DIR)

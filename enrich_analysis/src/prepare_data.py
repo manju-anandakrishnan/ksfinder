@@ -2,7 +2,7 @@ import os
 import pandas as pd
 from util.constants import KSFinderConstants as ksf_constants
 
-ROOT_DIR_RELATIVE_PATH = '../../'
+ROOT_DIR_RELATIVE_PATH = ''
 KSFINDER_DATA_PATH = os.path.join(ROOT_DIR_RELATIVE_PATH,ksf_constants.RESULTS_DIR)
 PREDICTION_DATA = os.path.join(KSFINDER_DATA_PATH,ksf_constants.TXT_IDG_K_PREDICTIONS)
 

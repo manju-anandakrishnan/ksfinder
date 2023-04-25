@@ -7,7 +7,7 @@ from sklearn.metrics import average_precision_score,roc_auc_score, roc_curve, pr
 import numpy as np
 import matplotlib.pyplot as plt
 
-ROOT_DIR_RELATIVE_PATH = '../../'
+ROOT_DIR_RELATIVE_PATH = ''
 
 KGE_MODEL_DIR = os.path.join(ROOT_DIR_RELATIVE_PATH,kge_constants.MODEL_PATH)
 ASSESS1_DATA_PATH = os.path.join(ROOT_DIR_RELATIVE_PATH,g_constants.ASSESS1_DATA_PATH)

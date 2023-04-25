@@ -5,7 +5,7 @@ from ampligraph.utils import restore_model
 from util.constants import GlobalConstants as g_constants
 from util.constants import KGEConstants as kge_constants
 
-ROOT_DIR_RELATIVE_PATH = '../../'
+ROOT_DIR_RELATIVE_PATH = ''
 
 CLF_DATA_PATH = g_constants.DATA_PATH
 KG_DATA_PATH = os.path.join(ROOT_DIR_RELATIVE_PATH,kge_constants.DATA_PATH)

@@ -25,17 +25,16 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--t_kge',default=False)
     args = parser.parse_args()
-    data_loader = KGEDataLoader()
-    data_loader.run()
 
     if args.t_kge:
         print('Beginning the training of the knowledge graph embedding models. This may take weeks depending on the GPU capability. Optionally use may use the trained embedding models.')
         is_train = input("Are you sure you want to train the models from scratch? Hit 'Y' to continue, else press any other key")
-        if 'Y':
-            KGEProcessor.train_kge()
-    
-    evaluation_data = EvaluationData()
-    evaluation_data.run()
+        if is_train == 'Y':
+            data_loader = KGEDataLoader()
+            data_loader.run()
+            KGEProcessor.train_kge()    
+            evaluation_data = EvaluationData()
+            evaluation_data.run()
         
     assessment1 = Assessment(g_constants.ASSESS1_DATA_PATH)
     assessment1.run(kge_constants.TRANSE)

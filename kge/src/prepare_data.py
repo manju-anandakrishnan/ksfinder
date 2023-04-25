@@ -14,7 +14,7 @@ import random
 '''
 
 np.random.seed(0)
-ROOT_DIR_RELATIVE_PATH = '../../'
+ROOT_DIR_RELATIVE_PATH = ''
 KG_DATA_PATH = g_constants.DATA_PATH
 
 ASSESS1_DATA_PATH = os.path.join(ROOT_DIR_RELATIVE_PATH,g_constants.ASSESS1_DATA_PATH)
@@ -33,10 +33,14 @@ class KGEDataLoader:
         self.pos_triples = load_from_csv('.', os.path.join(KG_DATA_PATH,kge_constants.KG_PHOSPHORYLATION), sep=',',header=0)
         self.neg_triples = load_from_csv('.', os.path.join(KG_DATA_PATH,kge_constants.PREDKINKG_NEGATIVES), sep=',',header=0)
 
-    def _split_data(self,triples):
+    def _split_data(self,triples,req_test=False):
         np.random.shuffle(triples)
-        X_train_valid, X_test = train_test_split_no_unseen(triples, test_size=self.test_size, seed=0)
-        X_train, X_valid = train_test_split_no_unseen(X_train_valid, test_size=self.val_size, seed=0)
+        X_test = None
+        if req_test:
+            X_train_valid, X_test = train_test_split_no_unseen(triples, test_size=self.test_size, seed=0)
+            X_train, X_valid = train_test_split_no_unseen(X_train_valid, test_size=self.val_size, seed=0)
+        else:
+            X_train, X_valid = train_test_split_no_unseen(triples, test_size=self.val_size, seed=0)
         return X_train,X_valid,X_test
     
     def _write_split(self):   
@@ -62,9 +66,10 @@ class KGEDataLoader:
         else:
             self._load_data()
             self.pos_train, self.pos_valid, self.pos_test = self._split_data(self.pos_triples)
+            self.pos_test = load_from_csv('.', os.path.join(KG_DATA_PATH,g_constants.CSV_POS_TEST), sep=',',header=0)
             self.kg_train = np.vstack((self.kg,self.pos_train))
             self._write_split()
-        self.neg_train, self.neg_valid, self.neg_test = self._split_data(self.neg_triples)
+        self.neg_train, self.neg_valid, self.neg_test = self._split_data(self.neg_triples,True)
         self._load_assess1_data()
     
 class EvaluationData:

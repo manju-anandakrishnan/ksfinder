@@ -4,7 +4,6 @@ The probability thresholds for filtering the predictions and mining the literatu
 '''
 
 from textmine.src.literature_search import Predictions
-from textmine.src.literature_search import TextMine
 
 def process():
     predictions = Predictions(l_prob=0.7)

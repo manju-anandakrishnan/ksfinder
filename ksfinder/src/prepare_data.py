@@ -4,7 +4,7 @@ from util.constants import KGEConstants as kge_constants
 from util.constants import KSFinderConstants as ksf_constants
 
 
-ROOT_DIR_RELATIVE_PATH = '../../'
+ROOT_DIR_RELATIVE_PATH = ''
 KG_PHOSPHORYLATION_PATH = os.path.join(ROOT_DIR_RELATIVE_PATH,kge_constants.DATA_PATH,kge_constants.KG_PHOSPHORYLATION)
 KSFINDER_DATA_PATH = os.path.join(ROOT_DIR_RELATIVE_PATH,ksf_constants.DATA_DIR)
 KG_PROTEINS = os.path.join(KSFINDER_DATA_PATH,ksf_constants.TXT_KG_PROTEINS)

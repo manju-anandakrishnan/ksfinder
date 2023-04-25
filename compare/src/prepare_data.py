@@ -8,7 +8,7 @@ from ordered_set import OrderedSet
 import random
 random.seed(10)
 
-ROOT_DIR_RELATIVE_PATH = '../../'
+ROOT_DIR_RELATIVE_PATH = ''
 LINKPHINDER_PREDICTIONS = os.path.join(ROOT_DIR_RELATIVE_PATH,ca_constants.DATA_DIR,ca_constants.LINKPHINDER_PREDICTIONS)
 LINKPHINDER_RAW_DATA = os.path.join(ROOT_DIR_RELATIVE_PATH,ca_constants.DATA_DIR,ca_constants.LINKPHINDER_RAW_DATA)
 
