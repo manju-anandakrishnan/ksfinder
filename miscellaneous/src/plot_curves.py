@@ -30,7 +30,7 @@ class PerformanceDataSets:
 
         plt.plot(fpr3, tpr3, color='red', label='KSFinder dataset (AUC = %0.3f)' % roc_score3)
         plt.plot(fpr6, tpr6, color='orange', label='PredKinKG dataset (AUC = %0.3f)' % roc_score6)
-        plt.plot(fpr4, tpr4, label='PKU dataset (AUC = %0.3f)' % roc_score4)
+        plt.plot(fpr4, tpr4, label='PredKinKG-B (AUC = %0.3f)' % roc_score4)
         plt.plot(fpr5, tpr5, color='green', label='LinkPhinder dataset (AUC = %0.3f)' % roc_score5)
         
 
@@ -38,9 +38,9 @@ class PerformanceDataSets:
         plt.plot([0, 0, 1], [0, 1, 1], linestyle=':', color='green', label='Perfect classifier')
         plt.xlabel('False positive rate')
         plt.ylabel('True positive rate')
-        plt.legend(loc="lower right")
+        plt.legend(loc=(0.4,0.1))
 
-        plt.savefig(g_constants.MISC_OUTPUT+'comparative_dataset_roc.png')
+        plt.savefig(g_constants.MISC_OUTPUT+'comparative_dataset_roc.png',dpi=400)
 
     def plot_pr_curve():
 
@@ -67,16 +67,16 @@ class PerformanceDataSets:
 
         plt.plot(recall3, precision3, color='red', label='KSFinder dataset (Avg PR = %0.3f)' % pr_score3)
         plt.plot(recall6, precision6, color='orange', label='PredKinKG dataset (Avg PR = %0.3f)' % pr_score6)
-        plt.plot(recall4, precision4, label='PKU dataset (Avg PR = %0.3f)' % pr_score4)
+        plt.plot(recall4, precision4, label='PredKinKG-B (Avg PR = %0.3f)' % pr_score4)
         plt.plot(recall5, precision5, color='green', label='LinkPhinder dataset (Avg PR = %0.3f)' % pr_score5)
 
         plt.plot([0, 0, 1], [0, 0, 0], linestyle='--', color='blue', label='Random classifier')  
         plt.plot([0, 1, 1], [1, 1, 0], linestyle=':', color='green', label='Perfect classifier')
         plt.xlabel('recall')
         plt.ylabel('precision')
-        plt.legend(loc="center left")
+        plt.legend(loc=(0.4,0.1))
 
-        plt.savefig(g_constants.MISC_OUTPUT+'comparative_dataset_pr.png')
+        plt.savefig(g_constants.MISC_OUTPUT+'comparative_dataset_pr.png',dpi=400)
 
 
 PerformanceDataSets.plot_roc_curve()
@@ -110,9 +110,9 @@ class CompareModels:
         plt.plot([0, 0, 1], [0, 1, 1], linestyle=':', color='green', label='Perfect classifier')
         plt.xlabel('False positive rate')
         plt.ylabel('True positive rate')
-        plt.legend(loc="lower right")
+        plt.legend(loc=(0.4,0.1))
 
-        plt.savefig(g_constants.MISC_OUTPUT+'comparative_models_roc.png')
+        plt.savefig(g_constants.MISC_OUTPUT+'comparative_models_roc.png',dpi=400)
 
     def plot_pr_curve():
 
@@ -140,9 +140,9 @@ class CompareModels:
         plt.plot([0, 1, 1], [1, 1, 0], linestyle=':', color='green', label='Perfect classifier')
         plt.xlabel('recall')
         plt.ylabel('precision')
-        plt.legend(loc="center left")
+        plt.legend(loc=(0.4,0.1))
 
-        plt.savefig(g_constants.MISC_OUTPUT+'comparative_models_pr.png')
+        plt.savefig(g_constants.MISC_OUTPUT+'comparative_models_pr.png',dpi=400)
 
 CompareModels.plot_roc_curve()
 CompareModels.plot_pr_curve()
