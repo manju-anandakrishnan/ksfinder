@@ -13,6 +13,9 @@ KG_KINASES = os.path.join(KSFINDER_DATA_PATH,ksf_constants.TXT_KG_KINASES)
 KG_IDG_KINASES = os.path.join(KSFINDER_DATA_PATH,ksf_constants.TXT_KG_IDG_KINASES)
 IDG_K_S = os.path.join(KSFINDER_DATA_PATH,ksf_constants.TXT_IDG_K_PREDICTIONS)
 
+'''
+This class compares the dark kinases reported by IDG with the proteins in our KG and creates an ouput with the overlapping 68 IDGs
+'''
 class IDGDataLoader:
 
     def __init__(self):
@@ -38,6 +41,9 @@ class IDGDataLoader:
         return self.idg_kg_kinases
 
 
+'''
+This class loads all the kinases in the knowledge graph
+'''
 class KGKinasesDataLoader:
 
     def __init__(self):

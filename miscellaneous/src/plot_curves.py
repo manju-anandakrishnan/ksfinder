@@ -4,6 +4,10 @@ from util.constants import GlobalConstants as g_constants
 import matplotlib.pyplot as plt
 from util.metrics import Curve, Score
 
+'''
+This class has methods to create the roc and pr curves by different datasets.
+It assess multiple test and plots the curves in one figure.
+'''
 class PerformanceDataSets:
 
     def plot_roc_curve():
@@ -83,6 +87,11 @@ class PerformanceDataSets:
 PerformanceDataSets.plot_roc_curve()
 PerformanceDataSets.plot_pr_curve()
 
+
+'''
+This class has methods to create the roc and pr curves by different models.
+It assess multiple models on KSFinder test data and plots the curves in one figure.
+'''
 class CompareModels:
 
     def plot_roc_curve():

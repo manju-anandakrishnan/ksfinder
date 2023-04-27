@@ -8,6 +8,9 @@ KSFINDER_DATA_PATH = g_constants.DATA_PATH
 TXT_IDG_K_PREDICTIONS = ksf_constants.TXT_IDG_K_PREDICTIONS
 TXT_KS_PREDICTIONS = ksf_constants.TXT_KS_PREDICTIONS
 
+'''
+This is the main module that invokes the class objects for preparing the input data and predicting the probability of phosphorylation.
+'''
 def process():
     data_loader = IDGDataLoader()
     idg_kg_kinases = data_loader.get_idg_kg_kinases()

@@ -17,6 +17,9 @@ KSFINDER_DATA_PATH = os.path.join(ROOT_DIR_RELATIVE_PATH,ksf_constants.DATA_DIR)
 KSFINDER_RESULT_PATH = os.path.join(ROOT_DIR_RELATIVE_PATH,ksf_constants.RESULTS_DIR)
 KG_PROTEINS = os.path.join(KSFINDER_DATA_PATH,ksf_constants.TXT_KG_PROTEINS)
 
+'''
+This class loads the saved KSFinder model, scales the test data and predicts the probability of phosphorylation. It writes the output to the results file.
+'''
 class KSFinder:
 
     def __init__(self):
