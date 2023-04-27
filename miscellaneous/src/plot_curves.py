@@ -7,6 +7,7 @@ from util.metrics import Curve, Score
 class PerformanceDataSets:
 
     def plot_roc_curve():
+        plt.close('all')
         fig, ax = plt.subplots(figsize=(7.5, 7.5))
         assess3 = Assessment(g_constants.ASSESS3_DATA_PATH)
         assess3.run()
@@ -43,7 +44,7 @@ class PerformanceDataSets:
         plt.savefig(g_constants.MISC_OUTPUT+'comparative_dataset_roc.png',dpi=400)
 
     def plot_pr_curve():
-
+        plt.close('all')
         fig, ax = plt.subplots(figsize=(7.5, 7.5))
         assess3 = Assessment(g_constants.ASSESS3_DATA_PATH)
         assess3.run()
@@ -85,6 +86,7 @@ PerformanceDataSets.plot_pr_curve()
 class CompareModels:
 
     def plot_roc_curve():
+        plt.close('all')
         fig, ax = plt.subplots(figsize=(7.5, 7.5))
         assess3 = Assessment(g_constants.ASSESS3_DATA_PATH)
         assess3.run()
@@ -115,7 +117,7 @@ class CompareModels:
         plt.savefig(g_constants.MISC_OUTPUT+'comparative_models_roc.png',dpi=400)
 
     def plot_pr_curve():
-
+        plt.close('all')
         fig, ax = plt.subplots(figsize=(7.5, 7.5))
         assess3 = Assessment(g_constants.ASSESS3_DATA_PATH)
         assess3.run()
