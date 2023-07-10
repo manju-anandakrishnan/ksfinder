@@ -18,7 +18,7 @@ CLF_DATA_DIR = os.path.join(ROOT_DIR_RELATIVE_PATH,clf_constants.DATA_DIR)
 POS_TRAIN = os.path.join(CLF_DATA_DIR,g_constants.CSV_POS_TRAIN)
 NEG_TRAIN = os.path.join(CLF_DATA_DIR,g_constants.CSV_NEG_TRAIN)
 
-CLF_OUTPUT_PATH = g_constants.OUTPUT_PATH
+CLF_OUTPUT_PATH = os.path.join(ROOT_DIR_RELATIVE_PATH,clf_constants.MODEL_PATH)
 KSFINDER_PATH = os.path.join(CLF_OUTPUT_PATH,g_constants.KSFINDER+'.sav')
 
 '''

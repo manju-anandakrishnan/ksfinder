@@ -4,10 +4,11 @@ import pandas as pd
 from ampligraph.utils import restore_model
 from util.constants import GlobalConstants as g_constants
 from util.constants import KGEConstants as kge_constants
+from util.constants import ClfConstants as clf_constants
 
 ROOT_DIR_RELATIVE_PATH = ''
 
-CLF_DATA_PATH = g_constants.DATA_PATH
+CLF_DATA_PATH = os.path.join(ROOT_DIR_RELATIVE_PATH,clf_constants.DATA_DIR)
 KG_DATA_PATH = os.path.join(ROOT_DIR_RELATIVE_PATH,kge_constants.DATA_PATH)
 KGE_MODEL_DIR = os.path.join(ROOT_DIR_RELATIVE_PATH,kge_constants.MODEL_PATH)
 NEGATOME_PATH = os.path.join(CLF_DATA_PATH,g_constants.CSV_NEGATOME)
@@ -74,6 +75,7 @@ class NegativeGenerator:
 
     def _load_negatome_data(self):
         self.negatome_kinase_cnt = {}
+        print(NEGATOME_PATH)
         with open(NEGATOME_PATH,'r') as ip_f:
             ip_f.readline()
             for record in ip_f:
@@ -221,14 +223,44 @@ class ClassifierData:
             op_f.write(g_constants.HEAD_TAIL+'\n')
             for nd in self.neg_train: op_f.write(nd+'\n')
 
+    # def _load_assess3_data(self):
+    #     with open(os.path.join(ASSESS3_DATA_PATH,g_constants.CSV_POS_TEST),'w') as op_f:
+    #         op_f.write(g_constants.HEAD_TAIL+'\n')
+    #         for pd in self.pos_test: op_f.write(pd+'\n')
+
+    #     with open(os.path.join(ASSESS3_DATA_PATH,g_constants.CSV_NEG_TEST),'w') as op_f:
+    #         op_f.write(g_constants.HEAD_TAIL+'\n')
+    #         for pd in self.neg_test: op_f.write(pd+'\n')
+    
+    # Method modified to address the review comment. 
+    # Removed the randomly sampled data from negative test as they may induce bias in evaluation.
     def _load_assess3_data(self):
-        with open(os.path.join(ASSESS3_DATA_PATH,g_constants.CSV_POS_TEST),'w') as op_f:
-            op_f.write(g_constants.HEAD_TAIL+'\n')
-            for pd in self.pos_test: op_f.write(pd+'\n')
+        cc_negatives = pd.read_csv(NEGATIVES_PREDKINKG_CC_PATH,sep=',')
+        negatome_negatives = pd.read_csv(NEGATOME_PATH,sep=',') 
+        cc_negatives['ht'] = cc_negatives['head']+','+cc_negatives['tail']
+        negatome_negatives['ht'] = negatome_negatives['head']+','+negatome_negatives['tail']
+        cc_negatome_negatives = negatome_negatives['ht'].to_list()
+        cc_negatome_negatives.extend(cc_negatives['ht'].to_list())        
+        cc_negatome_negatives = set(cc_negatome_negatives)
+
+        assess3_neg_test = set(self.neg_test)
+        assess3_negatives = assess3_neg_test.intersection(cc_negatome_negatives)
+        neg_cnt = len(assess3_negatives)
 
         with open(os.path.join(ASSESS3_DATA_PATH,g_constants.CSV_NEG_TEST),'w') as op_f:
             op_f.write(g_constants.HEAD_TAIL+'\n')
-            for pd in self.neg_test: op_f.write(pd+'\n')
+            for data in assess3_negatives:
+                op_f.write(data+'\n')
+
+        pos_max_index = len(self.pos_test)-1
+        assess3_pos_index = set()
+        while len(assess3_pos_index) < neg_cnt:
+            assess3_pos_index.add(random.randint(0,pos_max_index))
+
+        with open(os.path.join(ASSESS3_DATA_PATH,g_constants.CSV_POS_TEST),'w') as op_f:            
+            op_f.write(g_constants.HEAD_TAIL+'\n')
+            for index in assess3_pos_index: 
+                op_f.write(self.pos_test[index]+'\n')
 
     def _load_assess4_data(self):
         with open(os.path.join(ASSESS2_DATA_PATH,g_constants.CSV_POS_TEST)) as ip_f, open(os.path.join(ASSESS4_DATA_PATH,g_constants.CSV_POS_TEST),'w') as op_f:

@@ -20,12 +20,15 @@ def process():
             classifer_data.run()
 
             nn_classifier = NNClassifier()
-            nn_classifier.run()    
+            nn_classifier.run()      
 
     assessment3 = Assessment(g_constants.ASSESS3_DATA_PATH)
     assessment3.run()
     
     assessment4 = Assessment(g_constants.ASSESS4_DATA_PATH)
-    assessment4.run()    
+    assessment4.run() 
+
+    # assessment_review_1 = Assessment('/home/manjua/ksfinder_v1/revision_1/')
+    # assessment_review_1.run()
 
 process()

@@ -49,6 +49,7 @@ class Assessment:
             ip_f.readline()
             for record in ip_f:
                 self.ksfinder_test.append(self.nn_classifier.get_ht_vector(record.strip(),1))
+        print('Loaded test data',self.ASSESS_DATA_PATH)
         with open(os.path.join(self.ASSESS_DATA_PATH,g_constants.CSV_NEG_TEST)) as ip_f:
             ip_f.readline()
             for record in ip_f:
@@ -59,7 +60,7 @@ class Assessment:
         self.test_features = np.array(ksfinder_test.iloc[:,:label_index])
         self.test_target = ksfinder_test.iloc[:,label_index].astype('int').values
         self.test_features = self.nn_classifier.transform(self.test_features)
-  
+
     def run(self):
         y_labels, y_probs = Evaluation(self.test_features,self.test_target).run()
         self.y_labels = y_labels
