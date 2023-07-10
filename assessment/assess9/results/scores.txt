@@ -1,0 +1,3 @@
+ROC-AUC	0.63	PR-AUC	0.59
+Accuracy=0.63	Precision=0.59	Recall=0.626
+tp=2408	fp=1360	tn=2348	fn=1440
