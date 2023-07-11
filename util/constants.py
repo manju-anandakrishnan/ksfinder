@@ -26,6 +26,7 @@ class GlobalConstants:
     ASSESS6_DATA_PATH = DIR_ASSESSMENT+'assess6/'
     ASSESS7_DATA_PATH = DIR_ASSESSMENT+'assess7/'
     ASSESS8_DATA_PATH = DIR_ASSESSMENT+'assess8/'
+    ASSESS9_DATA_PATH = DIR_ASSESSMENT+'assess9/'
     SCORES = 'scores.txt'
     PR_CURVE = 'pr_auc.png'
     ROC_CURVE = 'roc_auc.png'
@@ -115,6 +116,8 @@ class ComparativeAssessmentConstants:
     LINKPHINDER_BENCHMARK_9010 = 'benchmark9010'
     LINKPHINDER_TRAIN_FILE = 'train.tsv'
     LINKPHINDER_TEST_FILE = 'test.tsv'
+    UNIPROT_GENE_CSV = 'uniprot_gene.csv'
+    SER_THR_KS_ATLAS = 'ser_thr_ks_atlas.xlsx'
 
 class PreprocessConstants:
     DATA_DIR = 'preprocess/data/'

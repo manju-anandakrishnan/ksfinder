@@ -2,7 +2,8 @@
 This is an utility module maintaining classes for plotting curves and computing performance metrics
 '''
 
-from sklearn.metrics import average_precision_score,roc_auc_score, roc_curve, precision_recall_curve
+from sklearn.metrics import average_precision_score,roc_auc_score, roc_curve, precision_recall_curve, recall_score
+from sklearn.metrics import balanced_accuracy_score, average_precision_score, confusion_matrix
 import matplotlib.pyplot as plt
 
 class Curve:
@@ -45,5 +46,18 @@ class Score:
         pr_score = round(pr_score,3)
         precision, recall, thresholds = precision_recall_curve(y_labels, y_probs)
         return pr_score, precision, recall, thresholds
+    
+    def accuracy_score(y_labels,y_pred):
+        return round(balanced_accuracy_score(y_labels, y_pred),3)
+
+    def precision_score(y_labels,y_pred):
+        return round(average_precision_score(y_labels, y_pred),3)
+    
+    def confusion_matrix(y_labels,y_pred):
+        tn, fp, fn, tp = confusion_matrix(y_labels, y_pred).ravel()
+        return tn,fp,fn,tp
+    
+    def recall_score(y_labels,y_pred):
+        return round(recall_score(y_labels,y_pred),3)
 
 
