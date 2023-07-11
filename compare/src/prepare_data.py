@@ -189,10 +189,6 @@ class KSAtlas:
             ip_f.readline()
             for line in ip_f:
                 entities.append(line.strip())
-        # kg1 = pd.read_csv('/home/manjua/github_manjua/ksfinder/kge/data/kg1.csv',sep=',')
-        # entities = kg1['head'].to_list()
-        # entities.extend(kg1['tail'].to_list())
-        # entities = set(entities)
 
         pos_data = pd.read_csv(KSFINDER_POS_DATA,sep=',')
         pos_data['ht']=pos_data['head']+pos_data['tail']
