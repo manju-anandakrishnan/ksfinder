@@ -35,7 +35,7 @@ class Assessment:
                 self.y_probs.append(float(prob))
                 self.y_labels.append(0)
 
-    def run(self):
+    def run(self,o_class=False):
         y_labels, y_probs = self.y_labels, self.y_probs
         score_roc, _, _, _ = Score.get_roc_scores(y_labels,y_probs)
         score_pr, _, _, _ = Score.get_pr_scores(y_labels,y_probs)
@@ -45,5 +45,14 @@ class Assessment:
         pr_curve.savefig(os.path.join(self.ASSESS_DATA_PATH,g_constants.RESULTS_PATH,g_constants.PR_CURVE))
         self.scores_file = open(os.path.join(self.ASSESS_DATA_PATH,g_constants.RESULTS_PATH,g_constants.SCORES),'w')
         print('ROC-AUC',score_roc,'PR-AUC',score_pr,file=self.scores_file,sep='\t')
+
+        if o_class:
+            accuracy = Score.accuracy_score(y_labels,y_probs)
+            precision = Score.precision_score(y_labels,y_probs)
+            recall = Score.recall_score(y_labels,y_probs)
+            print('Accuracy='+str(accuracy),'Precision='+str(precision),'Recall='+str(recall),file=self.scores_file,sep='\t')
+            tn, fp, fn, tp = Score.confusion_matrix(y_labels,y_probs)
+            print('tp='+str(tp),'fp='+str(fp),'tn='+str(tn),'fn='+str(fn),file=self.scores_file,sep='\t')
+
         self.scores_file.close()
         Curve.reset_plt()
