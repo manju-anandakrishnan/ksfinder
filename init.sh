@@ -42,3 +42,7 @@ rm 22378023
 mv linkphinder_data_splits linkphinder_raw_data
 cd linkphinder_raw_data
 rm -rf !(benchmark9010)
+
+# Download the atlas of kinase-substrate specificities by Johnson et al.
+wget https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-022-05575-3/MediaObjects/41586_2022_5575_MOESM5_ESM.xlsx
+mv 41586_2022_5575_MOESM5_ESM.xlsx ser_thr_ks_atlas.xlsx

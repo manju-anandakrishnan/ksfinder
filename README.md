@@ -8,6 +8,7 @@ conda install --file requirements.txt <br>
 pip install ampligraph <br>
 pip install ordered_set <br>
 pip install suds <br>
+conda install openpyxl
 
 Hardware Requirements -  Nvidia GPU with at least 16 GB memory and support for CUDA 10.0 or higher.
 
@@ -29,7 +30,7 @@ python clf/src/main.py <br>
 To train the classifier model with the embedded vectors, pass the argument --t_clf=True to the above script.
 The results of evaluation and test data will be loaded in the assessment folders 3 & 4.
 
-# Comparative assessments (Assessment 5, 6, 7, 8)
+# Comparative assessments (Assessment 5, 6, 7, 8, 9)
 python compare/src/main.py <br>
 The results of evaluation and test data will be loaded in the appropriate assessment folders.
 
