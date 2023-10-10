@@ -46,5 +46,5 @@ python enrich_analysis/src/main.py <br>
 
 By using the data or code in this repository, you accept the terms and conditions governed by the license.
 
-# Cite this work as,
+To cite this work:
 Anandakrishnan M, Ross KE, Chen C, Shanker V, Cowart J, Wu CH. 2023. KSFinder—a knowledge graph model for link prediction of novel phosphorylated substrates of kinases. PeerJ 11:e16164 https://doi.org/10.7717/peerj.16164
